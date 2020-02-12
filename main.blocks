@@ -1,0 +1,55 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="9-Au.H=Y8QrQN5;.|p?{">Player</variable><variable type="KIND_SpriteKind" id="Y8+4FX)Bs~aS@9@cXCpn">Projectile</variable><variable type="KIND_SpriteKind" id="|I;lvy_e1qz?Tp@x(2NA">Food</variable><variable type="KIND_SpriteKind" id="%}`1,ZLrUtLxQCcP/0NT">Enemy</variable><variable id="S{c)}NuJ:]VZ$gkJOb-`">weather</variable><variable id="]c0#j%doWV-d0ry|9OKF">weather guy</variable><variable id="d*_]d?{1j^?;^w8_yhOX">real weather</variable><variable id="~-fcjUbmgff7{8Fl-x-!">list</variable><variable id="%DfdHJv)LKdXdDlrI_TE">weather list</variable><variable id="5ciF@T`ak5S/9loM-8oa">weather effects</variable></variables><block type="pxt-on-start" id="=S}y7!_8zYoUbPr`sCX^" x="290" y="-30"><statement name="HANDLER"><block type="variables_set" id="*ZVld[C%div}.WSxZ$VE"><field name="VAR" id="S{c)}NuJ:]VZ$gkJOb-`">weather</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="gameaskforstring" id="_syGXcHxR7]YbuJt5J+A"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="message"><shadow type="text" id=";oJ6+Q2EszvBgM}7X`P7"><field name="TEXT">what is your weather prediction? </field></shadow></value></block></value><next><block type="gameSplash" id="_X+SNO?4_[IX1.a]je20"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="title"><block type="text_join" id="s2l9F#mpr]%*IT^_eI-2"><mutation items="2"/><value name="ADD0"><shadow type="text" id="%ub{a9=~TW;3zMO[QO5#"><field name="TEXT">prediction</field></shadow></value><value name="ADD1"><shadow type="text"><field name="TEXT"/></shadow><block type="variables_get" id=",p#E6)83X(VCbK[e{T5["><field name="VAR" id="S{c)}NuJ:]VZ$gkJOb-`">weather</field></block></value></block></value><next><block type="variables_set" id="sV;u0taVff|%k,;[rsVE"><field name="VAR" id="5ciF@T`ak5S/9loM-8oa">weather effects</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random" id="}LPR#)Z8Ro8;Xd;A1#.@"><value name="min"><shadow type="math_number" id="lNzM#:E(itz6^L%wvXC1"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number" id="FferP%r6x}Pyh^:@AAO@"><field name="NUM">2</field></shadow></value></block></value><next><block type="gameSplash" id="h+hlN;t[]2vL9-Pfx7;!"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><value name="title"><shadow type="text"><field name="TEXT">weather is actually</field></shadow><block type="variables_get" id="S!3-EEHw8J)m4(`R|8dI"><field name="VAR" id="5ciF@T`ak5S/9loM-8oa">weather effects</field></block></value><value name="subtitle"><shadow type="text" id="nT:vS-VfOxi4+GC(Bva!"><field name="TEXT"/></shadow></value><next><block type="controls_if" id=";Mrf0|3KSiK[([p_Ih)T"><mutation elseif="2" else="1"/><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="y/:b3yh.iEk!rqMDA;ji"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id=";d/%qFl6=1AWM(JD]GBb"><field name="VAR" id="5ciF@T`ak5S/9loM-8oa">weather effects</field></block></value><value name="B"><shadow type="math_number" id="]}0KW)sknRhLlbHAf?7O"><field name="NUM">0</field></shadow></value></block></value><statement name="DO0"><block type="particlesStartScreenAnimation" id="b})M8tg~@PZhbtLwB[v_"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><field name="effect">effects.blizzard</field><next><block type="variables_set" id="jma#br^0m7cotu+rmYB/"><field name="VAR" id="]c0#j%doWV-d0ry|9OKF">weather guy</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="5hq-/Tqq`U[G]0lFYOku"><value name="img"><shadow type="screen_image_picker" id="d7mRF}dnUDl*%t}5E;{7"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 1 1 . . . . . . . 
+. . . . . . 1 f f 1 . . . . . . 
+. . . . . 1 f f f f 1 . . . . . 
+. . . . 1 f f f f f f 1 . . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . . 2 2 f 1 f f 1 f 2 2 . . . 
+. . . 2 2 2 2 f f 2 2 2 2 . . . 
+. . . 2 2 2 2 f f 2 2 2 2 . . . 
+. . 2 2 2 2 2 f f 2 2 2 2 2 . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+. . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="BhN=RAv)/[AXa@KXsJuW"><field name="MEMBER">Player</field></shadow></value></block></value></block></next></block></statement><value name="IF1"><block type="logic_compare" id="QVd`e}hbI-+s$V%Qcv1L"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="h(o{;]u|_SU*KcjgEN?0"><field name="VAR" id="5ciF@T`ak5S/9loM-8oa">weather effects</field></block></value><value name="B"><shadow type="math_number" id="/KSe:5C5,`gIuQO{8eN7"><field name="NUM">1</field></shadow></value></block></value><statement name="DO1"><block type="particlesStartScreenAnimation" id="CRfZ4Y}hHU-;_m!|CF%R"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><field name="effect">effects.clouds</field><next><block type="variables_set" id="o[;XM^qpe0_jH/k:/aiN"><field name="VAR" id="]c0#j%doWV-d0ry|9OKF">weather guy</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="2JJW:CB@28zp1:;zF7Eh"><value name="img"><shadow type="screen_image_picker" id="e+VR?+h_T1yF7t`eO-oi"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 1 1 . . . . . . . 
+. . . . . . 1 f f 1 . . . . . . 
+. . . . . 1 f f f f 1 . . . . . 
+. . . . 1 f f f f f f 1 . . . . 
+. . . 1 f f 1 f f 1 f f 1 . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . 1 f f f f f f f f f f 1 . . 
+. . 1 f f f f f f f f f f 1 . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="la-8NUoT?9N:n]G)dECX"><field name="MEMBER">Player</field></shadow></value></block></value></block></next></block></statement><value name="IF2"><block type="logic_compare" id="]cK1Q7Q`wIY0P96r-v}Q"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="r`AK/Lf#lRk5vdjhz^CU"><field name="VAR" id="5ciF@T`ak5S/9loM-8oa">weather effects</field></block></value><value name="B"><shadow type="math_number" id="Ijx;~7Et@f=#QM7L`:|E"><field name="NUM">2</field></shadow></value></block></value><statement name="DO2"><block type="particlesStartScreenAnimation" id=".[){6_9+fD97[4q=OS6c"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><field name="effect">effects.starField</field><next><block type="variables_set" id=":5);0R@b~kSNB[{gZjx5"><field name="VAR" id="]c0#j%doWV-d0ry|9OKF">weather guy</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="F^npA.Ekvq%wx.qHQA.*"><value name="img"><shadow type="screen_image_picker" id="^F`!sN?wBEJAo{XRBtD_"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 1 1 . . . . . . . 
+. . . . . . 1 f f 1 . . . . . . 
+. . . . . 1 f f f f 1 . . . . . 
+. . . . 1 f f f f f f 1 . . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . . 1 f f 1 f f 1 f f 1 . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . . 1 f f f f f f f f 1 . . . 
+. . 1 f f f f f f f f f f 1 . . 
+. . 1 f f f f f f f f f f 1 . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="9z5m1o?OErWHXE*~Vx##"><field name="MEMBER">Player</field></shadow></value></block></value></block></next></block></statement><statement name="ELSE"><block type="gameSplash" id="?=Cm^=:]3uo7$Rveo47d"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="1" _input_init="true"></mutation><value name="title"><shadow type="text" id="og3^I+vx8+GsjVr=oUx{"><field name="TEXT">type a different weather</field></shadow></value><value name="subtitle"><shadow type="text" id="upOAxQlj60A,I+1APBP4"><field name="TEXT">pick star/cloud/snow</field></shadow></value><next><block type="arcade_game_reset" id="PRPyv6YR-)nXii!JZcKX"/></next></block></statement></block></next></block></next></block></next></block></next></block></statement></block></xml>
